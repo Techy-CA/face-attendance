@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import * as faceapi from "face-api.js";
+import * as faceapi from "@vladmandic/face-api";
 import { db } from "../firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { loadModels } from "../utils/loadModels";
