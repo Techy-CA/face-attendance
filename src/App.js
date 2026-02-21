@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Register from "./pages/Register";
+import Attendance from "./pages/Attendance";
+import Dashboard from "./pages/Dashboard";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <nav style={{ padding: "1rem", background: "#1e1b4b", display: "flex", gap: "2rem" }}>
+        <Link to="/register" style={{ color: "white" }}>Register</Link>
+        <Link to="/attendance" style={{ color: "white" }}>Mark Attendance</Link>
+        <Link to="/dashboard" style={{ color: "white" }}>Dashboard</Link>
+      </nav>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/attendance" element={<Attendance />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
