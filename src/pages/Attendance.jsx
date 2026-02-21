@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "@vladmandic/face-api";
 import { db } from "../firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
